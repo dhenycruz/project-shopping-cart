@@ -28,11 +28,32 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
+function saveCart() {
+  const cart = document.querySelectorAll('.cart__item');
+  const arrayCart = [];
+  cart.forEach((item) => {
+    arrayCart.push(item.innerHTML);
+  });
+  localStorage.setItem('cart', JSON.stringify(arrayCart));
+}
+
 function cartItemClickListener(event) {
   // coloque seu código aqui
   event.target.remove();
+  saveCart();
 }
 
+function loadCart() {
+  if (localStorage.getItem('cart') !== null) {    
+    const arrayCartStorage = JSON.parse(localStorage.getItem('cart'));
+    arrayCartStorage.forEach((item) => {
+      const li = document.createElement('li');
+      li.innerText = item;
+    document.querySelector('.cart__items').appendChild(li);
+      li.addEventListener('click', cartItemClickListener);
+    });
+  }
+}
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
@@ -53,6 +74,7 @@ async function requestIdProduct(id) {
   const itemCart = createCartItemElement({ sku: json.id, name: json.title, salePrice: json.price });
   itemCart.addEventListener('click', () => cartItemClickListener);
   document.querySelector('.cart__items').appendChild(itemCart);
+  saveCart();
 }
 
 async function listProduct() {
@@ -72,4 +94,5 @@ async function listProduct() {
 
 window.onload = function () {
   listProduct();
+  loadCart();
 };
