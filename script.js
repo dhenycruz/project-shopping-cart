@@ -95,4 +95,11 @@ async function listProduct() {
 window.onload = function () {
   listProduct();
   loadCart();
+  const buttonEmpty = document.querySelector('.empty-cart');
+  buttonEmpty.addEventListener('click', () => {
+    const lis = document.querySelectorAll('li');
+    lis.forEach((li) => {
+      li.remove();
+    });
+  });
 };
