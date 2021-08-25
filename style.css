@@ -1,7 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ebebeb
+}
+
+.header {
+  background-color: #fff15b;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2d3277;
+}
 .container {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin-top: 25px;;
 }
 
 .items {
@@ -12,13 +30,14 @@
 }
 
 .item {
-  border: 2px solid blue;
+  border: 2px solid white;
   border-radius: 5px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: auto;
   margin: 5px;
+  margin-bottom: 20px;
   width: 200px;
 }
 
@@ -30,6 +49,7 @@
   flex-grow: 1;
   padding: 10px;
   text-align: center;
+  background-color: white;
 }
 
 .item .item__image {
@@ -37,7 +57,7 @@
 }
 
 .item .item__add {
-  background-color: green;
+  background-color: #3483fa;
   border: 0;
   cursor: pointer;
   margin: 0;
