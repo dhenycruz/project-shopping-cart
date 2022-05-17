@@ -7,13 +7,13 @@ Objetivo do projeto:
 
 ## 🚀 Começando
 - Para iniciliaziar o projeto em sua máquina:
-  - Clone o repositório:
+ - Clone o repositório:
     ``` git@github.com:dhenycruz/project-shopping-cart.git ```
-  - Entre na pasta do repositório que você acabou de clonar:
+ - Entre na pasta do repositório que você acabou de clonar:
     ``` cd project-shopping-cart ```
-  - Instale as dependências
+ - Instale as dependências
     ``` npm install ```
-  - Crie uma branch a partir da branch master caso queira fazer alterações.
+ - Crie uma branch a partir da branch master caso queira fazer alterações.
 
 ## 🛠️ Construído com
 
